@@ -20,8 +20,8 @@ int main(int argc, char **argv)
 	nav_msgs::MapMetaData metaD = nav_msgs::MapMetaData();
 	metaD.map_load_time = ros::Time::now();
 	metaD.resolution = 0.05; //each pixel will represent .05 meters
-	metaD.width = 1200; //1200 pixels long , AKA 60 meters
-	metaD.height = 300; //300 pixels tall, AKA 15 meters
+	metaD.width = 2400; //2400 pixels long , AKA 120 meters
+	metaD.height = 600; //600 pixels tall, AKA 30 meters
 	//metaD.origin will just init to 0, no need to change
 
 	nav_msgs::OccupancyGrid map = nav_msgs::OccupancyGrid();
@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 	//As per http://docs.ros.org/jade/api/nav_msgs/html/msg/OccupancyGrid.html
 	//The data is in row-major order, starting witht he 0,0 origin.
 	//Probabilities are in a range from [0,100], with -1 being 0
-	for(int i =0; i < 1200*300; i++)
+	for(int i =0; i < 2400*600; i++)
 	{
 		map.data.push_back(-1); //Here, I create the entire map as unknown
 	}
